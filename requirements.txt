@@ -1,0 +1,9 @@
+cloudscraper
+requests
+discord
+discord.ext
+hmac
+colorama
+hashlib
+fade
+getpass
