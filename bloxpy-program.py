@@ -1,3 +1,6 @@
+PATCHED_BY_SALTY_CODER = True
+
+
 import os
 
 import requests, hmac, random, colorama, hashlib, fade, getpass, time, cloudscraper, json, subprocess, threading, asyncio
@@ -8,7 +11,7 @@ $$$$$$$\  $$\                     $$$$$$$\
 $$  __$$\ $$ |                    $$  __$$\           
 $$ |  $$ |$$ | $$$$$$\  $$\   $$\ $$ |  $$ |$$\   $$\  
 $$$$$$$\ |$$ |$$  __$$\ \$$\ $$  |$$$$$$$  |$$ |  $$ |   ~ Made by 7gh ~
-$$  __$$\ $$ |$$ /  $$ | \$$$$  / $$  ____/ $$ |  $$ |
+$$  __$$\ $$ |$$ /  $$ | \$$$$  / $$  ____/ $$ |  $$ |   --  PATCHED BY SALTY-CODER  -- 
 $$ |  $$ |$$ |$$ |  $$ | $$  $$<  $$ |      $$ |  $$ |
 $$$$$$$  |$$ |\$$$$$$  |$$  /\$$\ $$ |      \$$$$$$$ |
 \_______/ \__| \______/ \__/  \__|\__|       \____$$ |
@@ -28,14 +31,13 @@ def valid(key):
     return True
 
 def main(key):
-    version = "1.1.8"
-    if version != requests.get("https://API LINK HERE/version").text:
+    version = "1.1.8 PATCHED BY SALTY-CODER"
+    if version != "1.1.8 PATCHED BY SALTY-CODER":
         print(colorama.Fore.RED + "\nYour version is outdated! Please update to the latest version of BloxPy!\n" + colorama.Style.RESET)
         time.sleep(5)
         exit()
     def key_handler():
-        r=requests.get("https://API LINK HERE/check?key=" + key)
-        if "invalid" in r.text:
+        if "invalid" in " --  PATCHED BY SALTY-CODER :)  -- ":
             print(colorama.Fore.RED + "\n[BloxPy] Your key has been invalidated by an admin. We are sorry if this causes any inconvenience.\n")
             time.sleep(5)
             exit()
@@ -68,18 +70,11 @@ def main(key):
 print(center(banner))
 
 try:
-    ok = json.load(open("config.json"))["key"]
-    if len(ok) < 36:
-        print(colorama.Fore.RED + "[BloxPy] Access key invalid!" + colorama.Fore.RESET)
-        time.sleep(2)
-    elif valid(ok) == True:
+    ok = "PATCHED BY SALTY-CODER" #json.load(open("config.json"))["key"]
+    if PATCHED_BY_SALTY_CODER == True:
         print(colorama.Fore.GREEN + "[BloxPy] Access key valid!" + colorama.Fore.RESET)
         time.sleep(0.5)
-        requests.post("WH HERE", json={"content": f"key: {ok}, hwid: {hwid}"})
         main(ok)
-    else:
-        print(colorama.Fore.RED + "[BloxPy] Access key invalid!" + colorama.Fore.RESET)
-        time.sleep(2)
 except:
     i = input(colorama.Fore.CYAN + "[BloxPy] Enter your access key > ")
     print(colorama.Fore.RESET)  
@@ -92,7 +87,6 @@ except:
         print(colorama.Fore.GREEN + "[BloxPy] Access key is valid!")
         print(colorama.Fore.RESET)
         json.dump({"key": i}, open("config.json", "w"))
-        requests.post("WH HERE", json={"content": f"key: {i}, hwid: {hwid}"})
         time.sleep(0.5)
         main(i)
 
